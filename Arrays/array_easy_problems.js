@@ -1,104 +1,104 @@
 // `Print all elements of an array`
 
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-// for (let index = 0; index < array.length; index++) {
-//     console.log(array[index]);
-// }
+for (let index = 0; index < array.length; index++) {
+    console.log(array[index]);
+}
 
-// `Find the sum of all elements`
-// //`using array`
-// let sum = 0
-// for (let index = 0; index < array.length; index++) {
-//     sum += array[index];
-// }
-// console.log(sum);
+`Find the sum of all elements`
+//`using array`
+let sum = 0
+for (let index = 0; index < array.length; index++) {
+    sum += array[index];
+}
+console.log(sum);
 
-// `using reduce()`
-// const result = array.reduce((sum, index) => { return sum + index }, 0)
-// console.log(result);
-
-
-// //`Find the largest element`
-// let max = 0;
-// for (let index = 0; index <= array.length; index++) {
-//     if (array[index] > max) {
-//         max = array[index]
-//     }
-// }
-// console.log(max);
-// console.log(Math.max(...array))
+`using reduce()`
+const result = array.reduce((sum, index) => { return sum + index }, 0)
+console.log(result);
 
 
-// // `Find the smallest element`
-// let arr = [10, 5, 6, 7, 0, 1, 5]
-// let min = arr[0]
-// for (let index = 0; index < arr.length; index++) {
-//     if (arr[index] < min) {
-//         min = arr[index]
-//     }
-// }
-// console.log(min);
-// console.log(Math.min(...arr))
-
-// //`Find the average of array`
-// let avg_sum = 0
-// for (let index = 0; index < array.length; index++) {
-//     avg_sum += array[index]
-// }
-// console.log(avg_sum / array.length);
+//`Find the largest element`
+let max = array[0];
+for (let index = 0; index <= array.length; index++) {
+    if (array[index] > max) {
+        max = array[index]
+    }
+}
+console.log(max);
+console.log(Math.max(...array))
 
 
-// //Count even and odd numbers
-// let odd_count = 0
-// let even_count = 0
-// for (let index = 0; index < array.length; index++) {
-//     if (array[index] % 2 == 0) {  // Both will Work  == and === 
-//         even_count += 1
-//     }
-//     else {
-//         odd_count += 1
-//     }
-// }
-// console.log(even_count, odd_count);
+// `Find the smallest element`
+let arr = [10, 5, 6, 7, 0, 1, 5]
+let min = arr[0]
+for (let index = 0; index < arr.length; index++) {
+    if (arr[index] < min) {
+        min = arr[index]
+    }
+}
+console.log(min);
+console.log(Math.min(...arr))
 
-// //Count positive, negative and zero elements
-// let positive = 0
-// let negative = 0
-// let zero = 0
-// const array_test = [0, 1, -1, 0, 2, 0, -9, 6, 0, -7]
-// for (let index = 0; index <= array_test.length; index++) {
-//     if (array_test[index] > 0) {
-//         positive += 1
-//     }
-//     else if (array_test[index] < 0) {
-//         negative += 1
-//     }
-//     else {
-//         zero += 1
-//     }
-// }
-// console.log(positive, negative, zero);
+//`Find the average of array`
+let avg_sum = 0
+for (let index = 0; index < array.length; index++) {
+    avg_sum += array[index]
+}
+console.log(avg_sum / array.length);
 
 
+//Count even and odd numbers
+let odd_count = 0
+let even_count = 0
+for (let index = 0; index < array.length; index++) {
+    if (array[index] % 2 == 0) {  // Both will Work  == and === 
+        even_count += 1
+    }
+    else {
+        odd_count += 1
+    }
+}
+console.log(even_count, odd_count);
 
-// //Find the second largest element
-// function findSecondLargest(array) {
-//     let first_largest = -Infinity
-//     let second_largest = -Infinity
-//     for (let num of array) {
-//         if (num > first_largest) {
-//             second_largest = first_largest
-//             first_largest = num
-//         }
-//         else if (num < first_largest && num > second_largest) {
-//             second_largest = num
-//         }
-//     }
+//Count positive, negative and zero elements
+let positive = 0
+let negative = 0
+let zero = 0
+const array_test = [0, 1, -1, 0, 2, 0, -9, 6, 0, -7]
+for (let index = 0; index < array_test.length; index++) {
+    if (array_test[index] > 0) {
+        positive++
+    }
+    else if (array_test[index] < 0) {
+        negative++
+    }
+    else {
+        zero++
+    }
+}
+console.log(positive, negative, zero);
 
-//     return second_largest === -Infinity ? undefined : second_largest
-// }
 
-// console.log(findSecondLargest(array))
+
+//Find the second largest element
+function findSecondLargest(array) {
+    let first_largest = -Infinity
+    let second_largest = -Infinity
+    for (let num of array) {
+        if (num > first_largest) {
+            second_largest = first_largest
+            first_largest = num
+        }
+        else if (num < first_largest && num > second_largest) {
+            second_largest = num
+        }
+    }
+
+    return second_largest === -Infinity ? undefined : second_largest
+}
+
+console.log(findSecondLargest(array))
 
 
 
@@ -182,3 +182,54 @@ function countOccurnce(array, target) {
     return count
 }
 console.log(countOccurnce([1, 2, 3, 2, 4, 2, 5], 2));
+
+
+
+//Find maximum and minimum together
+
+function findMaxMin(array) {
+    let max = array[0]
+    let min = array[0]
+    for (let index = 0; index < array.length; index++) {
+        if (array[index] > max) {
+            max = array[index]
+        }
+        if (array[index] < min) {
+            min = array[index]
+        }
+    }
+    return [max, min]
+}
+
+console.log(findMaxMin(array));
+
+
+//Copy one array into another
+function copyArray(array) {
+    copied_array = []
+    for (let item of array) {
+        copied_array.push(item)
+    }
+    return copied_array
+}
+
+console.log(copyArray(array));
+
+
+//Swap first and last element
+
+function SwapElements(array) {
+    if (array.length < 1) {
+        return "Too small array.."
+    }
+    else {
+        first_element = array[0]
+        last_element = array[array.length - 1]
+        array[0] = last_element
+        array[array.length - 1] = first_element
+    }
+    return array
+
+}
+
+console.log(SwapElements(array));
